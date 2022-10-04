@@ -20,4 +20,6 @@ module.exports = function(app) {
   );
 
   app.post("/api/auth/signin", controller.signin);
+  app.post("/api/auth/additem", controller.addItemToUser);
+  app.post("/api/auth/createitem", controller.createItem);
 };

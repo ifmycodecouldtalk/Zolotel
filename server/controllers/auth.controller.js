@@ -2,6 +2,7 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
+const Item = db.item;
 
 const Op = db.Sequelize.Op;
 
@@ -85,3 +86,39 @@ exports.signin = (req, res) => {
       res.status(500).send({ message: err.message });
     });
 };
+
+exports.addItemToUser = (req, res) => {
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    }).then(user => {
+        if (!user) {
+            return res.status(404).send({ message: "Something went wrong! That user doesn't exist!" });
+        }
+        Item.findAll({
+            where: {
+                name: {
+                    [Op.or]: req.body.name
+                }
+            }
+        }).then(items => {
+            user.addItems(items).then(() => {
+                res.send({message: "Item added successfully"});
+            });
+        });
+    });
+};
+
+exports.createItem = (req, res) => {
+    Item.create({
+        name: req.body.name,
+        quantity: req.body.quantity,
+        cost: req.body.cost,
+        url: req.body.url,
+        hot: req.body.hot,
+        sale: req.body.sale
+    }).then(() => {
+        res.send({message: "Item created successfully"});
+    })
+}

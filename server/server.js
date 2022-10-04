@@ -10,10 +10,7 @@ app.use(express.static(publicPath));
 // DATABASE CONNECTION
 const db = require("./models");
 const Role = db.role;
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync Db');
-  initial();
-});
+db.sequelize.sync();
 // CORS
 var corsOptions = {
     origin: "http://localhost:8081"
