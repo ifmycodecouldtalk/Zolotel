@@ -1,10 +1,15 @@
 import React from 'react';
+import Navbar from './tools/Navbar';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/js/dist/dropdown';
+import 'bootstrap/js/dist/collapse';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
+        <Navbar />
+        <h1 className='text-center'>Hello World</h1>
       </div>
     )
   }

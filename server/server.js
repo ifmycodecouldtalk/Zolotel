@@ -6,6 +6,7 @@ const path = require("path");
 const publicPath = path.join(__dirname, '..', 'build');
 const app = express();
 app.use(express.static(publicPath));
+app.use(express.static("public"));
 
 // DATABASE CONNECTION
 const db = require("./models");
