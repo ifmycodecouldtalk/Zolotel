@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Navbar from './tools/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/dist/dropdown';
@@ -9,7 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <h1 className='text-center'>Hello World</h1>
+        <Outlet />
       </div>
     )
   }

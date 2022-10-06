@@ -1,0 +1,25 @@
+.elegoo-img {
+    height: 500px;
+    width: auto;
+}
+.gboy-img {
+    height: 500px;
+    width: auto;
+}
+.r_pi-img {
+    height: 500px;
+    width: auto;
+}
+
+.elegoo-caption {
+    color: white;
+}
+.item-1 {
+    background-color: blue;
+}
+.item-2 {
+    background-color: green;
+}
+.item-3 {
+    background-color: red;
+}
