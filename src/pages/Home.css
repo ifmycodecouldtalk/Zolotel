@@ -2,7 +2,7 @@ body {
     background-color: #e3e3e3;
 }
 .carousel-item {
-    height: 600px !important;
+    height: 650px !important;
 }
 .elegoo-img {
     height: 500px;
@@ -19,6 +19,8 @@ body {
 
 .elegoo-caption {
     color: white;
+    font-family: 'Helvetica';
+    font-size: 76px;
 }
 .item-1 {
     background-color: blue;
@@ -41,25 +43,23 @@ body {
     height: 50px;
     width: 100%;
 }
-.gadgets-img {
+.gallery-img {
     width: 375px;
     height: auto;
 }
-.books-img {
-    width: 375px;
-    height: auto;
-}
-.ps5-img {
-    width: 375px;
-    height: auto;
-}
-
-
-
-
 
 .gallery-square {
     height: 400px;
     background-color: white;
-    z-index: 1;
+   
+   z-index: 1;
+}
+
+.myFooter {
+    background-color: #001864;
+    height: 400px;
+}
+.test-link-color {
+    color: white;
+    font-family:'Open Sans';
 }
