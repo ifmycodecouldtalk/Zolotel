@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/collapse';
 
@@ -15,7 +16,7 @@ class Navbar extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link" aria-current="page" href="#body">About</a>
+                                    <Link className="nav-link" aria-current="page" to="/home">Home</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#body">Contact Us</a>
@@ -38,8 +39,8 @@ class Navbar extends React.Component {
                                 </li>
                             </ul>
                             <div className="d-flex">
-                                <button className="btn btn-outline-primary me-2" type="submit">Sign Up</button>
-                                <button className="btn btn-primary" type="submit">Sign In</button>
+                                <Link className="btn btn-outline-primary me-2" to='/signup'>Sign Up</Link>
+                                <Link className="btn btn-primary" to='/signin'>Sign In</Link>
                             </div>
                         </div>
                     </div>
