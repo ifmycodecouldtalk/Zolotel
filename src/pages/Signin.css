@@ -1,0 +1,47 @@
+body {
+    background-color: #ffffff;
+}
+.myLogo {
+    width: 200px;
+    height: auto;
+}
+.signinTitle {
+    font-size: 30px;
+    font-family: 'Open Sans';
+}
+.myForm {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #C5C5C5;
+    border-radius: 2%;
+}
+.zolotel-privacy {
+    font-size: 14px;
+    font-family: 'Helvetica';
+}
+
+h2 {
+    width: 100%; 
+    position: relative;
+    text-align: center; 
+    color: #7d7d7d;
+    border-bottom: 1px solid #dadada; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+ h2 span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
+
+ .newText {
+    width: 50%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ .mySignUpButton {
+    width: 200px;
+ }

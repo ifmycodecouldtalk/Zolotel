@@ -99,7 +99,7 @@ class Signup extends React.Component {
                         <p className='zolotel-privacy text-center'>By creating an account, you agree to Zolotel's <u>Conditions of Use</u> and <u>Privacy Notice</u>.</p>
                         {/* Already Have An Account? */}
                         <hr />
-                        <p className='already'>Already have an account? <a href='/home'>Sign in</a></p>
+                        <p className='already'>Already have an account? <a href='/signin'>Sign in</a></p>
                         </form>
                     </div>
                     
