@@ -122,3 +122,15 @@ exports.createItem = (req, res) => {
         res.send({message: "Item created successfully"});
     })
 }
+
+exports.getCartItems = (req, res) => {
+  User.findOne({
+    where: {
+        username: req.body.username
+    }
+  }).then((user) => {
+    user.getItems().then((items) => {
+      res.status(200).send({items})
+    })
+  })
+}
