@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import AuthService from '../services/auth.service';
 import './Cart.css';
 
@@ -19,20 +20,25 @@ class Cart extends React.Component {
     componentDidMount = () => {
         // get username
         const currentUser = AuthService.getCurrentUser();
-        fetch("http://localhost:3001/api/auth/getcart", {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json',
-                'Accept':'application/json'
-            },
-            body: JSON.stringify({
-                username: currentUser.username
+        if(currentUser)
+        {
+            fetch("http://localhost:3001/api/auth/getcart", {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json',
+                    'Accept':'application/json'
+                },
+                body: JSON.stringify({
+                    username: currentUser.username
+                })
+            }).then((response) => response.json()).then((data) => {
+                this.setState({cartItems: data.items});
+                this.setState({isLoggedIn: true});
+                this.setState({username: currentUser.username});
             })
-        }).then((response) => response.json()).then((data) => {
-            this.setState({cartItems: data.items});
-            this.setState({isLoggedIn: true});
-            this.setState({username: currentUser.username});
-        })
+        } else {
+            return <Navigate to='/home' />
+        }
         
         // fill in the array
     }
