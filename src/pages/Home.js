@@ -26,10 +26,39 @@ class Home extends React.Component {
         }
     }
 
-    handleAddToCart(name, username, e) {
+    handleAddToCart = async(name, username, e) => {
         e.preventDefault();
-
-        if(username === '') alert("Sign in to add items to cart");
+        console.log(name);
+        console.log(username);
+        console.log(this.state.username);
+        if(username === '') {
+            alert("Sign in to add items to cart");
+        } else {
+            let confirmation = window.confirm("Add 1 " + name + " to your cart?");
+            if (confirmation) {
+                try {
+                    let res = await fetch("http://localhost:3001/api/auth/additem", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type':'application/json',
+                            'Accept':'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: [name],
+                            username: this.state.username
+                        }),
+                    }).then(alert("sent to cart"));
+                    let resJson = await res.json();
+                    if (res.status === 200) {
+                        alert('sent!');
+                    } else {
+                        alert('something went wrong');
+                    }
+                } catch (err) {
+                console.log(err);
+                }
+            }
+        }
     }
 
     render() {

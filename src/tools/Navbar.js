@@ -19,7 +19,8 @@ class Navbar extends React.Component {
     componentDidMount() {
         const currentUser = AuthService.getCurrentUser();
         if(currentUser) this.setState({isLoggedIn: true});
-        this.setState({ currentUser: currentUser, userReady: true })
+        this.setState({ currentUser: currentUser, userReady: true });
+        console.log(this.state.isLoggedIn);
     }
     handleLogout(e) {
         e.preventDefault();
