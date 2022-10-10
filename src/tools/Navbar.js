@@ -1,10 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthService from '../services/auth.service';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/collapse';
 
 class Navbar extends React.Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          redirect: null,
+          userReady: false,
+          currentUser: { username: "" },
+          isLoggedIn: false
+        };
+        this.handleLogout = this.handleLogout.bind("this");
+    }
+    componentDidMount() {
+        const currentUser = AuthService.getCurrentUser();
+        if(currentUser) this.setState({isLoggedIn: true});
+        this.setState({ currentUser: currentUser, userReady: true })
+    }
+    handleLogout(e) {
+        e.preventDefault();
+        AuthService.logout();
+        window.location.reload();
+    }
     render() {
+        const { currentUser } = this.state;
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,10 +61,15 @@ class Navbar extends React.Component {
                                     <a className="nav-link disabled" href="#body" tabindex="-1" aria-disabled="true">Sell</a>
                                 </li>
                             </ul>
+                            {(!this.state.isLoggedIn) ?
                             <div className="d-flex">
                                 <Link className="btn btn-outline-primary me-2" to='/signup'>Sign Up</Link>
                                 <Link className="btn btn-primary" to='/signin'>Sign In</Link>
-                            </div>
+                            </div>:
+                            <div className="d-flex">
+                                <strong><h3 className='yourUserName pe-4'>Hello, <u>{currentUser.username}</u></h3></strong>
+                                <button className="btn btn-danger me-2" to='/logout' onClick={this.handleLogout}>Logout</button>
+                            </div>}
                         </div>
                     </div>
                 </nav>

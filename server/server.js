@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ROUTES
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
 })
 

@@ -21,7 +21,7 @@ body {
     font-family: 'Helvetica';
 }
 
-h2 {
+.myLine {
     width: 100%; 
     position: relative;
     text-align: center; 
@@ -31,7 +31,7 @@ h2 {
     margin: 10px 0 20px; 
  } 
  
- h2 span { 
+ .myLine span { 
      background:#fff; 
      padding:0 10px; 
  }

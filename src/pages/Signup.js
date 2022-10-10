@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Signup.css';
 
 class Signup extends React.Component {
@@ -45,7 +46,7 @@ class Signup extends React.Component {
                     
                     {/* Logo */}
                     <div className='text-center'>
-                        <img src='/electronics-brand.jpg' alt='logo' className='myLogo mt-2' />
+                    <Link to="/home"><img src='/electronics-brand.jpg' alt='logo' className='myLogo mt-2' /></Link>
                     </div>
                     {/* Form */}
                     <br />

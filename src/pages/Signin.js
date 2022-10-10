@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthService from "../services/auth.service";
 import './Signin.css';
 
 class Signin extends React.Component {
@@ -9,8 +10,9 @@ class Signin extends React.Component {
             username: '',
             email: '',
             password: '',
+            loading: false
         };
-
+        this.handleLogin = this.handleLogin.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit = async (e) => {
@@ -38,18 +40,50 @@ class Signin extends React.Component {
           console.log(err);
         }
     };
+    handleLogin(e) {
+        e.preventDefault();
+
+        this.setState({
+            loading: true
+        });
+
+        if (1==1) {
+            AuthService.login(this.state.username, this.state.password).then(
+            () => {
+                window.location.reload();
+            },
+            error => {
+                const resMessage =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+
+                this.setState({
+                loading: false,
+                message: resMessage
+                });
+            }
+            );
+        } else {
+            this.setState({
+            loading: false
+            });
+        }
+    }
     render(){
         return(
             <>
                 <div className='signup'>
                     {/* Logo */}
                     <div className='text-center'>
-                        <img src='/electronics-brand.jpg' alt='logo' className='myLogo mt-2' />
+                        <Link to="/home"><img src='/electronics-brand.jpg' alt='logo' className='myLogo mt-2' /></Link>
                     </div>
                     {/* Signin Form */}
                     <br />
                     <div className='myForm w-25 p-4'>
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleLogin}>
                             <p className='signinTitle'>Sign In</p>
                             {/* username */}
                             <div className="form-group">
@@ -86,7 +120,7 @@ class Signin extends React.Component {
                     <br />
                     {/* New to Zolotel? */}
                     <div className='newText  text-center'>
-                        <h2 className='text-center'><span>New to Zolotel?</span></h2><br />
+                        <h2 className='text-center myLine'><span>New to Zolotel?</span></h2><br />
                         {/* Button to signup page */}
                         <Link className="btn btn-primary me-2 mySignUpButton" to='/signup'>Sign Up</Link>
                     </div>
