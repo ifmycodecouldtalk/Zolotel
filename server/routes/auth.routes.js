@@ -23,4 +23,5 @@ module.exports = function(app) {
   app.post("/api/auth/additem", controller.addItemToUser);
   app.post("/api/auth/createitem", controller.createItem);
   app.post("/api/auth/getcart", controller.getCartItems);
+  app.post("/api/auth/removecartitem", controller.removeCartItem);
 };

@@ -134,3 +134,19 @@ exports.getCartItems = (req, res) => {
     })
   })
 }
+
+exports.removeCartItem = (req, res) => {
+  User.findOne({
+    where: {
+        username: req.body.username
+    }
+  }).then((user) => {
+      Item.findOne({
+        where: {
+          name: req.body.name
+        }
+      }).then((item) => {
+        user.removeItem(item);
+      })
+  }).then(res.send({message: "Item Removed"}));
+}
