@@ -129,8 +129,8 @@ exports.getCartItems = (req, res) => {
         username: req.body.username
     }
   }).then((user) => {
-    user.getItems().then((items) => {
-      res.status(200).send({items})
+      user.getItems().then((items) => {
+        res.status(200).send({items})
     })
   })
 }
