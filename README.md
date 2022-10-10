@@ -1,5 +1,4 @@
 # Zolotel
 
-Zolotel is a WIP E-Commerce site to demonstrate my knowledge of frontend and backend technologies. In this application, I 
-will be using React and Express, as well as some other frameworks like Bootstrap and Postgres. Like this project, this README
-is also a WIP and will be continuously updated over time. My documentation of the project can be found in [this google doc](https://docs.google.com/document/d/1PTmY3x3T652uc6E5p1ONjLLEqdn2POaCzH_PYSqzLjQ/edit#)
+## What Is Zolotel?
+Zolotel is my first complete E-Commerce site, from start to finish all from scratch. This project is very important to me because it is the amalgamation of all of the skills I've learned with React frontend and Express backend technology. The project is still in its early stages, and I plan on implementing more polishing and adding more features in the future.
