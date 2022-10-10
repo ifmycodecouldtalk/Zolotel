@@ -52,13 +52,14 @@ class Navbar extends React.Component {
                                         <li><a className="dropdown-item" href="#body">Kits</a></li>
                                         <li><a className="dropdown-item" href="#body">Components</a></li>
                                         <li><a className="dropdown-item" href="#body">Modules</a></li>
-                                        <li><hr className="dropdown-divider" /></li>
                                         <li><a className="dropdown-item" href="#body">Gadgets</a></li>
+                                        <li><hr className="dropdown-divider" /></li>
                                         <li><a className="dropdown-item" href="#body">Tools</a></li>
+                                        <li><a className="dropdown-item" href="#body">Tutorials, Instruction Manuals</a></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link disabled" href="#body" tabindex="-1" aria-disabled="true">Sell</a>
+                                    <a className="nav-link disabled" href="#body" tabIndex="-1" aria-disabled="true">Sell</a>
                                 </li>
                             </ul>
                             {(!this.state.isLoggedIn) ?
