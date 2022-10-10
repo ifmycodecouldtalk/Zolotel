@@ -70,7 +70,7 @@ class Cart extends React.Component {
                                         <img src={item.url} className='cart-photo' alt='cart-item' />
                                     </div>
                                     <div className='col'>
-                                        <br /><br /><br /><br />
+                                        <br /><br />
                                         <h2>In Stock: {item.quantity}</h2>
                                         <br />
                                         <h2>Price: ${item.cost}</h2>

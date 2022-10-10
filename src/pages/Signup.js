@@ -32,12 +32,15 @@ class Signup extends React.Component {
           if (res.status === 200) {
             this.setState({username: ''});
             this.setState({email: ''});
+            alert("You are registered, you may now sign in")
+            window.location.replace("http://localhost:3001/signin");
           } else {
-            alert('something went wrong');
+            alert('Username/Email Already Taken. Try Again');
           }
         } catch (err) {
           console.log(err);
         }
+        
     };
     render(){
         return(
@@ -107,7 +110,7 @@ class Signup extends React.Component {
                     {/* Footer */}
                     <br />
                     <hr />
-                    <div className='container w-50 text-center'>
+                    <div className='container w-50 text-center footy'>
                         <div className='row'>
                             <div className='col-3'>
                                 <p>Conditions of Use</p>

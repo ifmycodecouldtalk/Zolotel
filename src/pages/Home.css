@@ -2,39 +2,49 @@ body {
     background-color: #e3e3e3;
 }
 .carousel-item {
-    height: 650px !important;
+    height: 550px !important;
 }
 .elegoo-img {
-    height: 500px;
-    width: auto;
+    height: auto;
+    width: 30vw;
 }
 .gboy-img {
-    height: 500px;
-    width: auto;
+    height: auto;
+    width: 30vw;
 }
 .r_pi-img {
-    height: 500px;
-    width: auto;
+    height: auto;
+    width: 40vw;
 }
 
 .elegoo-caption {
-    color: white;
-    font-family: 'Helvetica';
+    color: black;
+    font-family: 'Open Sans';
     font-size: 76px;
 }
+.elegoo-desc {
+    font-family: 'Open Sans';
+    font-size: 48px;
+    position: relative;
+    top: 45px;
+}
 .item-1 {
-    background-color: blue;
+    background-color: rgb(129, 161, 196);
 }
 .item-2 {
-    background-color: green;
+    background-color: rgb(106, 170, 106);
 }
 .item-3 {
-    background-color: red;
+    background-color: rgb(169, 107, 107);
 }
 
 .downshift {
     position: relative;
     top: 30px;
+}
+
+.carousel-img {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .gradient-div {
@@ -65,4 +75,33 @@ body {
 .test-link-color {
     color: white;
     font-family:'Open Sans';
+}
+
+.footer-link {
+    text-decoration: none;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 20px;
+}
+.breaker {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .elegoo-caption {
+        color: black;
+        font-family: 'Open Sans';
+        font-size: 40px;
+        position: relative;
+        top: 80px;
+    }
+    .elegoo-desc {
+        font-family: 'Open Sans';
+        font-size: 32px;
+        position: relative;
+        top: 65px;
+    }
+    .breaker {
+        display: block;
+    }
 }

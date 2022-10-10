@@ -49,33 +49,34 @@ class Signin extends React.Component {
 
         if (1==1) {
             AuthService.login(this.state.username, this.state.password).then(
-            () => {
-                window.location.reload();
-            },
-            error => {
-                const resMessage =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString();
+                () => {
+                    window.location.replace("http://localhost:3001/home");
+                },
+                error => {
+                    const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
 
-                this.setState({
-                loading: false,
-                message: resMessage
-                });
-            }
+                    this.setState({
+                        loading: false,
+                        message: resMessage
+                    });
+                    alert("Incorrect credentials, try again");
+                }
             );
         } else {
             this.setState({
-            loading: false
+                loading: false
             });
         }
     }
     render(){
         return(
             <>
-                <div className='signup'>
+                <div className='signin'>
                     {/* Logo */}
                     <div className='text-center'>
                         <Link to="/home"><img src='/electronics-brand.jpg' alt='logo' className='myLogo mt-2' /></Link>
@@ -127,7 +128,7 @@ class Signin extends React.Component {
                     {/* Footer */}
                     <br />
                     <hr />
-                    <div className='container w-50 text-center'>
+                    <div className='container w-50 text-center footy'>
                         <div className='row'>
                             <div className='col-3'>
                                 <p>Conditions of Use</p>

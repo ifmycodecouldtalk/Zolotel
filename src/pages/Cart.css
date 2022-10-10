@@ -10,3 +10,12 @@
     width: 400px;
     height: auto;
 }
+@media (max-width: 500px) {
+    .cart-photo {
+        width: 150px;
+        height: auto;
+    }
+    .cart-item-area {
+        height: 250px;
+    }
+}

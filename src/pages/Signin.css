@@ -45,3 +45,15 @@ body {
  .mySignUpButton {
     width: 200px;
  }
+ .congrats {
+    color: green;
+    font-size: 48px;
+ }
+ @media (max-width: 500px) {
+    .myForm {
+        width: 75% !important;
+    }
+    .footy {
+        width: 95% !important;
+    }
+}

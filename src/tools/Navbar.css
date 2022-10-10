@@ -9,4 +9,14 @@
 .yourUserName {
     position: relative;
     top: 5px;
+    color: white;
+}
+.navbar {
+    background-color: #0B2986 !important;
+}
+.nav-link {
+    color: white !important;
+}
+.myBrand {
+    border-radius: 25% !important;
 }
