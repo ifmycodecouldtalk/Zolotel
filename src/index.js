@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
-  RouterProvider
+  RouterProvider,
+  Navigate
 } from "react-router-dom";
 import './index.css';
 import App from './App';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import Cart from './pages/Cart';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <Home />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },

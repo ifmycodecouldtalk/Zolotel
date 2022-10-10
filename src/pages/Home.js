@@ -28,9 +28,6 @@ class Home extends React.Component {
 
     handleAddToCart = async(name, username, e) => {
         e.preventDefault();
-        console.log(name);
-        console.log(username);
-        console.log(this.state.username);
         if(username === '') {
             alert("Sign in to add items to cart");
         } else {
@@ -47,10 +44,11 @@ class Home extends React.Component {
                             name: [name],
                             username: this.state.username
                         }),
-                    }).then(alert("sent to cart"));
+                    });
                     let resJson = await res.json();
                     if (res.status === 200) {
-                        alert('sent!');
+                        console.log("check");
+                        alert("sent to cart!");
                     } else {
                         alert('something went wrong');
                     }

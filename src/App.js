@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './tools/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/dist/dropdown';
@@ -12,6 +12,9 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+        </Routes>
         <Outlet />
       </div>
     )

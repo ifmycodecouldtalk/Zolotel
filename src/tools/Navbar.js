@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import AuthService from '../services/auth.service';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/collapse';
+import './Navbar.css';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class Navbar extends React.Component {
           isLoggedIn: false
         };
         this.handleLogout = this.handleLogout.bind("this");
+        this.handleCartClick = this.handleCartClick.bind("this");
     }
     componentDidMount() {
         const currentUser = AuthService.getCurrentUser();
@@ -26,6 +28,9 @@ class Navbar extends React.Component {
         e.preventDefault();
         AuthService.logout();
         window.location.reload();
+    }
+    handleCartClick(e) {
+        <Navigate to="/cart" replace={true}/>
     }
     render() {
         const { currentUser } = this.state;
@@ -71,6 +76,7 @@ class Navbar extends React.Component {
                             <div className="d-flex">
                                 <strong><h3 className='yourUserName pe-4'>Hello, <u>{currentUser.username}</u></h3></strong>
                                 <button className="btn btn-danger me-2" to='/logout' onClick={this.handleLogout}>Logout</button>
+                                <Link to="/cart"><i className="bi bi-cart-fill ps-3"></i></Link>
                             </div>}
                         </div>
                     </div>

@@ -1,0 +1,12 @@
+.bi-cart-fill {
+    font-size: 30px;
+    position: relative;
+    top: -3px;
+}
+.bi-cart-fill:hover {
+    cursor:pointer;
+}
+.yourUserName {
+    position: relative;
+    top: 5px;
+}
